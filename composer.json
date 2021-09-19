@@ -1,0 +1,20 @@
+{
+    "name": "pobratym/develop-kit",
+    "version": "1.0.0",
+    "type": "project",
+    "description": "Develop kit for Laravel Framework.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "symfony/var-dumper": "^5.1.4",
+        "laravel/framework": "^8.54"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Pobratym\\DevelpoKit\\": "src/classes"
+        }
+    }
+}
