@@ -1,6 +1,6 @@
 <?php
 
-namespace Pobratym\DevelpoKit\BasicClass;
+namespace Pobratym\DevelopKit\BasicClass;
 
 class DataContainer
 {

@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pobratym\\DevelpoKit\\": "src/classes"
+            "Pobratym\\DevelopKit\\": "src/classes"
         }
     }
 }
