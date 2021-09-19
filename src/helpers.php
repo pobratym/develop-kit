@@ -1,9 +1,7 @@
 <?php
 
-if (config('app.debug')) {
-    ini_set("display_errors", 1);
-    error_reporting(E_ALL);
-}
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
 
 use Symfony\Component\VarDumper\VarDumper;
 
@@ -65,9 +63,7 @@ function redirect($to = null, $status = 302, $headers = [], $secure = null)
         return $redirect_response;
     }
 
-    if (config('app.debug')) {
-        $headers = ['Route' => trim(_getRealRoute(debug_backtrace()))] + $headers;
-    }
+    $headers = ['Route' => trim(_getRealRoute(debug_backtrace()))] + $headers;
 
     return $redirect_response->to($to, $status, $headers, $secure);
 }
@@ -81,9 +77,7 @@ function redirect($to = null, $status = 302, $headers = [], $secure = null)
  */
 function back($status = 302, $headers = [], $fallback = false)
 {
-    if (config('app.debug')) {
-        $headers = ['Route' => trim(_getRealRoute(debug_backtrace()))] + $headers;
-    }
+    $headers = ['Route' => trim(_getRealRoute(debug_backtrace()))] + $headers;
 
     return app('redirect')->back($status, $headers, $fallback);
 }
