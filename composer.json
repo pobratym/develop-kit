@@ -10,9 +10,6 @@
         "laravel/framework": "^8.54"
     },
     "autoload": {
-        "files": [
-            "src/helpers.php"
-        ],
         "psr-4": {
             "Pobratym\\DevelpoKit\\": "src/classes"
         }
