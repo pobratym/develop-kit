@@ -2,14 +2,16 @@
 
 Add the next things
 
-1. File `/artisan`, after `define('LARAVEL_START', microtime(true));`
+1. Run `composer require webxid/laravel-debug-helpers` in command line
+
+2. File `/artisan`, after `define('LARAVEL_START', microtime(true));`
 ```php
 if (file_exists(__DIR__.'/vendor/webxid/debug-kit/src/helpers.php')) {
     require __DIR__.'/vendor/webxid/debug-kit/src/helpers.php';
 }
 ```
 
-2. File `/public/index.php`, after `define('LARAVEL_START', microtime(true));`
+3. File `/public/index.php`, after `define('LARAVEL_START', microtime(true));`
 ```php
 if (file_exists(__DIR__.'/../vendor/webxid/debug-kit/src/helpers.php')) {
     require __DIR__.'/../vendor/webxid/debug-kit/src/helpers.php';
