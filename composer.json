@@ -1,17 +1,11 @@
 {
-    "name": "pobratym/develop-kit",
-    "version": "1.0.0",
-    "type": "project",
-    "description": "Develop kit for Laravel Framework.",
+    "name": "webxid/laravel-debug-helper",
+    "version": "2.0.0",
+    "description": "Debug helper for Laravel Framework.",
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
         "symfony/var-dumper": "^5.1.4",
-        "laravel/framework": "^8.54"
-    },
-    "autoload": {
-        "psr-4": {
-            "Pobratym\\DevelopKit\\": "src/classes"
-        }
+        "laravel/framework": "^7|^8"
     }
 }

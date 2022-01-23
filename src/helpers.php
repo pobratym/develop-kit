@@ -1,8 +1,5 @@
 <?php
 
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
-
 use Symfony\Component\VarDumper\VarDumper;
 
 if (!function_exists('dump')) {
@@ -86,9 +83,32 @@ function back($status = 302, $headers = [], $fallback = false)
  * @param $message
  * @param array $context
  */
-function _logIt($data, array $context = [])
+function _dd($data, $has_die = true, array $context = [], $clean_log = true)
 {
     $debug_backtrace = debug_backtrace();
+
+    foreach ($debug_backtrace as $row) {
+        if (strpos($row['file'] ?? '', '/vendor/') === false) {
+            continue;
+        }
+
+        [$app_dir, ] = explode('/vendor/', $row['file'], );
+
+        break;
+    }
+
+    $app_dir .= '/storage/logs/laravel.log';
+
+    if ($clean_log && is_file($app_dir)) {
+        unlink($app_dir);
+    }
+
+    if (
+        $data instanceof Illuminate\Database\Eloquent\Model
+        || $data instanceof Illuminate\Support\Collection
+    ) {
+        $data = $data->toArray();
+    }
 
     Illuminate\Support\Facades\Log::debug('' .
         "\n" .
@@ -99,6 +119,8 @@ function _logIt($data, array $context = [])
         "\n",
         $context
     );
+
+    $has_die && dd('exit');
 }
 
 /**
@@ -147,11 +169,11 @@ function _getRealRoute(array $debug_backtrace, $return_full_trace = false): stri
  * Build a full trace from a called place
  *
  * @param array $data
- * @param bool $break
+ * @param bool $has_die
  */
-function _trace($data = [], $break = true)
+function _trace($data = [], bool $has_die = true)
 {
-    print_r((new Exception())->getTraceAsString());
+    print_r(nl2br((new Exception())->getTraceAsString()). "\n");
 
-    $break ? dd($data) : dump($data);
+    $has_die ? dd($data) : dump($data);
 }
