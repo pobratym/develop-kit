@@ -6,15 +6,15 @@ Add the next things
 
 2. File `/artisan`, after `define('LARAVEL_START', microtime(true));`
 ```php
-if (file_exists(__DIR__.'/vendor/webxid/debug-kit/src/helpers.php')) {
-    require __DIR__.'/vendor/webxid/debug-kit/src/helpers.php';
+if (file_exists(__DIR__.'/vendor/webxid/laravel-debug-helpers/src/helpers.php')) {
+    require __DIR__.'/vendor/webxid/laravel-debug-helpers/src/helpers.php';
 }
 ```
 
 3. File `/public/index.php`, after `define('LARAVEL_START', microtime(true));`
 ```php
-if (file_exists(__DIR__.'/../vendor/webxid/debug-kit/src/helpers.php')) {
-    require __DIR__.'/../vendor/webxid/debug-kit/src/helpers.php';
+if (file_exists(__DIR__.'/../vendor/webxid/laravel-debug-helpers/src/helpers.php')) {
+    require __DIR__.'/../vendor/webxid/laravel-debug-helpers/src/helpers.php';
 }
 ```
 
