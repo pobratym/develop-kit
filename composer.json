@@ -1,11 +1,10 @@
 {
     "name": "webxid/laravel-debug-helpers",
-    "version": "2.0.0",
     "description": "Debug helper for Laravel Framework.",
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "symfony/var-dumper": ">=5.1.4",
+        "symfony/var-dumper": "^5.0|^6.0",
         "laravel/framework": "^7|^8|^9"
     }
 }
