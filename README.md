@@ -2,7 +2,7 @@
 
 Add the next things
 
-1. Run `composer require webxid/laravel-debug-helpers` in command line
+1. Run `composer require webxid/laravel-debug-helpers --dev` in command line
 
 2. File `/artisan`, after `define('LARAVEL_START', microtime(true));`
 ```php
